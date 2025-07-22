@@ -67,6 +67,13 @@ packages=(
 
   # Bluetooth
   blueberry         # Bluetooth GUI manager
+
+   # Printing
+   cups              # CUPS printing system
+   cups-filters      # Filter drivers for CUPS
+   cups-pdf          # Print to PDF
+   system-config-printer # Printer setup GUI
+
 )
 
 
