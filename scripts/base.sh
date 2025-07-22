@@ -20,7 +20,6 @@ packages=(
 
   # Modern terminal tools
   ripgrep           # Fast grep replacement
-  zoxide            # Smarter cd
   fzf               # Fuzzy file finder
   bat               # Modern cat
   zathura           # Lightweight document viewer
@@ -38,6 +37,9 @@ packages=(
   vim               # Classic editor
   mise              # Universal env manager
   sqlite            # Lightweight SQL DB
+  # Go toolchain
+  gopls delve go-tools golangci-lint
+
 
   # Security
   fail2ban          # Brute-force protection
@@ -74,6 +76,10 @@ packages=(
    cups-pdf          # Print to PDF
    system-config-printer # Printer setup GUI
 
+   # Extras
+   obsidian  # second brain
+   xournalpp  # sign pdfs
+
 )
 
 
@@ -81,9 +87,15 @@ packages=(
 yay -S --noconfirm --needed "${packages[@]}"
 
 
-sudo systemctl enable --now sshd.service
-sudo systemctl enable --now nftables.service
-sudo systemctl enable --now iwd.service
-sudo systemctl enable --now fail2ban.service
-sudo systemctl enable --now bluetooth.service
-sudo systemctl enable --now pipewire.socket pipewire-pulse.socket wireplumber.service
+services=(
+  sshd.service nftables.service fail2ban.service bluetooth.service pipewire.socket pipewire-pulse.socket
+  wireplumber.service cups.service
+)
+
+for svc in "${services[@]}"; do
+  if ! sudo systemctl enable --now "$svc"; then
+    echo " Failed to start: $svc"
+  else
+    echo " Started: $svc"
+  fi
+done
