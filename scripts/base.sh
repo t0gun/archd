@@ -77,11 +77,11 @@ packages=(
    system-config-printer # Printer setup GUI
 
    # Extras
-   obsidian  # second brain
+   obsidian-bin  # second brain
    xournalpp  # sign pdfs
+   localsend-bin
 
 )
-
 
 
 yay -S --noconfirm --needed "${packages[@]}"
