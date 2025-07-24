@@ -74,7 +74,6 @@ packages=(
    system-config-printer # Printer setup GUI
 
    # Extras
-   obsidian-bin  # second brain
    xournalpp  # sign pdfs
    localsend-bin
 
