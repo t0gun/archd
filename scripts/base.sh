@@ -19,8 +19,6 @@ packages=(
   wireguard-tools   # VPN tunneling
 
   # Modern terminal tools
-  ripgrep           # Fast grep replacement
-  fzf               # Fuzzy file finder
   bat               # Modern cat
   zathura           # Lightweight document viewer
   zathura-pdf-mupdf # Fast PDF backend
@@ -30,7 +28,6 @@ packages=(
   wl-clip-persist   # Clipboard persistence (Wayland fix)
   less              # Pager
   man               # Manual pages
-  tldr              # Simplified help pages
 
   # Editors and dev tools
   neovim            # Modern vim
@@ -47,7 +44,6 @@ packages=(
 
   # Terminal emulators and helpers
   alacritty         # GPU-accelerated terminal
-  bash-completion   # Tab completion support
   tree              # Directory tree view
 
   # GUI utilities
