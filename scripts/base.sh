@@ -8,83 +8,17 @@ command -v yay >/dev/null 2>&1 || (
 )
 
 packages=(
-  # Networking and diagnostics
-  traceroute        # Trace network hops
-  dnsutils          # dig, nslookup
-  nmap              # Port scanner
-  nftables          # Netfilter packet filtering
-  tcpdump           # Packet capture
-  mtr               # Real-time network diagnostics
-  openssh           # SSH client/server
-  wireguard-tools   # VPN tunneling
-  curl wget unzip
-
-  # Modern terminal tools
-  bat               # Modern cat
-  zathura           # Lightweight document viewer
-  zathura-pdf-mupdf # Fast PDF backend
-  fastfetch         # System info display
-  btop              # TUI system monitor
-  wl-clipboard      # Wayland clipboard integration
-  wl-clip-persist   # Clipboard persistence (Wayland fix)
-  less              # Pager
-  man               # Manual pages
-
-  # Editors and dev tools
-  neovim            # Modern vim
-  vim               # Classic editor
-  mise              # Universal env manager
-  sqlite            # Lightweight SQL DB
-  # Go toolchain
-  gopls delve go-tools golangci-lint
-
-
-  # Security
-  fail2ban          # Brute-force protection
-  gnupg             # GPG encryption/signing
-
-  # Terminal emulators and helpers
-  alacritty         # GPU-accelerated terminal
-  tree              # Directory tree view
-
-  # GUI utilities
-  nautilus          # File manager
-  sushi             # Nautilus previewer (Spacebar preview)
-
-  # Media + viewers
-  mpv               # Video/audio player
-  imv               # Lightweight image viewer
-
-  # Browser
-  chromium          # Wayland-capable browser
-
-  # Audio stack
-  pamixer           # CLI audio control
-  playerctl         # Media key support
-  pavucontrol       # GUI audio control
-  wireplumber       # PipeWire session manager (auto-pulls pipewire + pulse)
-
-  # Bluetooth
-  blueberry         # Bluetooth GUI manager
-
-   # Printing
-   cups              # CUPS printing system
-   cups-filters      # Filter drivers for CUPS
-   cups-pdf          # Print to PDF
-   system-config-printer # Printer setup GUI
-
-   # Extras
-   xournalpp  # sign pdfs
-   localsend-bin
-
+  openssh   wireguard-tools curl wget unzip iwd tcpdump nmap dnsutils traceroute mtr nftables bat zathura   fastfetch
+  btop   less    man  neovim      vim mise    sqlite  fail2ban   gnupg tree alacritty  gopls delve go-tools golangci-lint
+  pamixer  playerctl  pavucontrol    wireplumber blueberry   cups cups-filters cups-pdf system-config-printer xournalpp
+  localsend-bin zathura-pdf-mupdf chromium
 )
-
 
 yay -S --noconfirm --needed "${packages[@]}"
 
 
 services=(
-  sshd.service nftables.service fail2ban.service bluetooth.service pipewire.socket pipewire-pulse.socket
+  sshd.service nftables.service fail2ban.service bluetooth.service
   wireplumber.service cups.service
 )
 
