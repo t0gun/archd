@@ -17,7 +17,7 @@ packages=(
   mtr               # Real-time network diagnostics
   openssh           # SSH client/server
   wireguard-tools   # VPN tunneling
-  curl wget
+  curl wget unzip
 
   # Modern terminal tools
   bat               # Modern cat

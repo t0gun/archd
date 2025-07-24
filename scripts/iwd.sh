@@ -6,9 +6,7 @@ if ! command -v iwctl &>/dev/null; then
   sudo pacman -S --noconfirm --needed iwd
 fi
 
-sudo systemctl disable --now wpa_supplicant.service || true
 sudo systemctl enable --now iwd.service
-
 sudo systemctl enable --now systemd-networkd.service systemd-resolved.service
 
 log "Override systemd‑networkd‑wait‑online to exit on first link"
