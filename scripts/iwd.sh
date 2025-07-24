@@ -2,6 +2,7 @@
 set -euo pipefail
 
 log() { printf '[+] %s\n' "$*"; }
+
 log "Enabling required services"
 sudo systemctl enable --now iwd.service
 sudo systemctl enable --now systemd-networkd.service systemd-resolved.service
