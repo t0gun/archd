@@ -7,7 +7,7 @@ SCRIPTS=(
   base.sh fonts.sh iwd.sh docker.sh setup-firewall.sh hyprland.sh asdcontrol.sh appl-fn-keys.sh
 )
 
-for script in "${SCRIPTS[@]}}"; do
+for script in "${SCRIPTS[@]}"; do
   echo " Running $script"
   bash "$SCRIPT_DIR/$script"
   done
