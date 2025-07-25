@@ -10,7 +10,7 @@ command -v yay >/dev/null 2>&1 || (
 packages=(
   openssh   wireguard-tools curl wget unzip iwd tcpdump nmap dnsutils traceroute mtr nftables bat zathura   fastfetch
   btop   less    man  neovim      vim mise    sqlite  fail2ban   gnupg tree alacritty  gopls delve go-tools golangci-lint
-  pamixer  playerctl  pavucontrol    wireplumber blueberry   cups cups-filters cups-pdf system-config-printer xournalpp
+  pamixer  playerctl  pavucontrol    wireplumber pipewire pipewire-pulse pipewire-alsa pipewire-jack blueberry   cups cups-filters cups-pdf system-config-printer xournalpp
   localsend-bin zathura-pdf-mupdf chromium
 )
 
@@ -18,8 +18,7 @@ yay -S --noconfirm --needed "${packages[@]}"
 
 
 services=(
-  sshd.service nftables.service fail2ban.service bluetooth.service
-  wireplumber.service cups.service
+  pipewire.service pipewire-pulse.service sshd.service nftables.service fail2ban.service bluetooth.service wireplumber.service cups.service
 )
 
 for svc in "${services[@]}"; do
@@ -28,4 +27,4 @@ for svc in "${services[@]}"; do
   else
     echo " Started: $svc"
   fi
-done
+dones
