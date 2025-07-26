@@ -15,7 +15,7 @@ for script in "${SCRIPTS[@]}"; do
 user_services=(pipewire.service pipewire-pulse.service wireplumber.service)
 services=(
   sshd.service nftables.service fail2ban.service bluetooth.service
-  wireplumber.service cups.service
+  cups.service
 )
 
   for svc in "${user_services[@]}"; do
@@ -42,6 +42,7 @@ for item in "$CONFIG_SRC"/*; do
   mkdir -p "$target"
   cp -rT "$item" "$target"  #replaces recursively without nesting -rT
 done
+
 
 # SDDM SET UP it must be after .config from git has been copied to home.
 bash "$SCRIPT_DIR/sddm.sh"

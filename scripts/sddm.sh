@@ -5,7 +5,7 @@ set -euo pipefail
 systemctl enable sddm.service # need on restart
 USERNAME="apprentice"
 SESSION="hyprland-uwsm.desktop"
-BG_IMAGE="$HOME/.config/theme/wp.jpg"
+BG_IMAGE="$HOME/.config/bg/wp.jpg"
 THEME_NAME="elarun"
 
 sudo bash -c "cat > /etc/sddm.conf" <<EOF
