@@ -2,7 +2,7 @@
 set -euo pipefail
 
 
-systemctl enable sddm.service # need on restart
+sudo systemctl enable sddm.service # need on restart
 USERNAME="apprentice"
 SESSION="hyprland-uwsm.desktop"
 BG_IMAGE="$HOME/.config/bg/wp.jpg"
