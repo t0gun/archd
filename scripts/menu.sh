@@ -26,6 +26,13 @@ for svc in "${services[@]}"; do
 done
 
 # first all files in the config folder must be replaced with the actual ones in the home dir.
+CONFIG_SRC="$SCRIPT_DIR/../config" # go one directory up
+mkdir -p "$HOME/.config"
+for item in "$CONFIG_SRC"/*; do
+  target="$HOME/.config/$(basename "$item")"
+  mkdir -p "$target"
+  cp -rT "$item" "$target"  #replaces recursively without nesting -rT
+done
 
 # SDDM SET UP it must be after .config from git has been copied to home.
-./sddm.sh
+bash "$SCRIPT_DIR/sddm.sh"
