@@ -17,14 +17,3 @@ packages=(
 yay -S --noconfirm --needed "${packages[@]}"
 
 
-services=(
-  pipewire.service pipewire-pulse.service sshd.service nftables.service fail2ban.service bluetooth.service wireplumber.service cups.service
-)
-
-for svc in "${services[@]}"; do
-  if ! sudo systemctl enable --now "$svc"; then
-    echo " Failed to start: $svc"
-  else
-    echo " Started: $svc"
-  fi
-dones
