@@ -12,10 +12,19 @@ for script in "${SCRIPTS[@]}"; do
   bash "$SCRIPT_DIR/$script"
   done
 
+user_services=(pipewire.service pipewire-pulse.service wireplumber.service)
 services=(
-  pipewire.service pipewire-pulse.service sshd.service nftables.service fail2ban.service bluetooth.service
+  sshd.service nftables.service fail2ban.service bluetooth.service
   wireplumber.service cups.service
 )
+
+  for svc in "${user_services[@]}"; do
+    if systemctl --user enable --now "$svc"; then
+      echo "Started (user): $svc"
+    else
+      echo " Failed to start (user): $svc"
+    fi
+  done
 
 for svc in "${services[@]}"; do
   if ! sudo systemctl enable --now "$svc"; then
