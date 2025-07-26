@@ -11,11 +11,13 @@ size = 9
 padding.x = 14
 padding.y = 14
 decorations = "None"
-opacity = 0.98
+
 
 [keyboard]
 bindings = [
     { key = "F11", action = "ToggleFullscreen" }
+    { key = "C", mods = "Control|Shift", action = "Copy" },
+    { key = "V", mods = "Control|Shift", action = "Paste" }
 ]
 
 [colors]
