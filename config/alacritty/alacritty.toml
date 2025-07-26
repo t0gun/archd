@@ -12,12 +12,16 @@ padding.x = 14
 padding.y = 14
 decorations = "None"
 
+[selection]
+save_to_clipboard = true
+
 
 [keyboard]
 bindings = [
-    { key = "F11", action = "ToggleFullscreen" }
+    { key = "F11", action = "ToggleFullscreen" },
     { key = "C", mods = "Control|Shift", action = "Copy" },
-    { key = "V", mods = "Control|Shift", action = "Paste" }
+    { key = "V", mods = "Control|Shift", action = "Paste" },
+    { key = "Insert", mods = "Shift", action = "PasteSelection" },
 ]
 
 [colors]
