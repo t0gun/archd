@@ -11,7 +11,7 @@ packages=(
   openssh   wireguard-tools curl wget unzip iwd tcpdump nmap dnsutils traceroute mtr nftables bat zathura   fastfetch
   btop   less    man  neovim      vim mise    sqlite  fail2ban   gnupg tree alacritty  gopls delve go-tools golangci-lint
   pamixer  playerctl  pavucontrol    wireplumber pipewire pipewire-pulse pipewire-alsa pipewire-jack blueberry   cups cups-filters cups-pdf system-config-printer xournalpp
-  localsend-bin zathura-pdf-mupdf chromium
+  localsend-bin zathura-pdf-mupdf chromium libreoffice
 )
 
 yay -S --noconfirm --needed "${packages[@]}"
