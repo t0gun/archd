@@ -51,3 +51,4 @@ if ! fc-list | grep -qi "iA Writer Mono S"; then
   rm -rf iafonts.zip iaFonts
   fc-cache
   cd -
+  fi
